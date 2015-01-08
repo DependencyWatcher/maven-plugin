@@ -4,7 +4,6 @@ import java.io.File;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
@@ -12,7 +11,7 @@ import org.apache.maven.project.MavenProject;
 import com.dependencywatcher.client.DependencyWatcherClient;
 import com.dependencywatcher.collector.ProjectInfoCollector;
 
-@Mojo(name = "update", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "update")
 public class UpdateMojo extends AbstractMojo {
 
 	@Parameter(defaultValue = "${project}", readonly = true, required = true)

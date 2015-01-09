@@ -6,8 +6,33 @@
 	<artifactId>agent-maven-plugin</artifactId>
 	<version>1.0.0</version>
 	<name>DependencyWatcher Maven Plug-In</name>
-	<description>Maven integration with DependecyWatcher service</description>
+	<description>This maven plug-in allows integrating project build with DependencyWatcher service</description>
 	<packaging>maven-plugin</packaging>
+	<url>https://github.com/DependencyWatcher/maven-plugin</url>
+
+	<developers>
+		<developer>
+			<name>Michael Spector</name>
+			<email>spektom@gmail.com</email>
+			<organization>DependencyWatcher</organization>
+			<organizationUrl>https://dependencywatcher.com</organizationUrl>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/DependencyWatcher/maven-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:DependencyWatcher/maven-plugin.git</developerConnection>
+		<url>https://github.com/DependencyWatcher/maven-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,6 +79,32 @@
 						<id>mojo-descriptor</id>
 						<goals>
 							<goal>descriptor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>

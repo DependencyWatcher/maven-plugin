@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dependencywatcher</groupId>
-	<artifactId>agent-maven-plugin</artifactId>
+	<artifactId>dependencywatcher-maven-plugin</artifactId>
 	<version>1.0.0</version>
 	<name>DependencyWatcher Maven Plug-In</name>
 	<description>This maven plug-in allows integrating project build with DependencyWatcher service</description>

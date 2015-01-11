@@ -10,7 +10,7 @@ Maven integration with DependencyWatcher service.
 	<plugins>
 		<plugin>
 			<groupId>com.dependencywatcher</groupId>
-			<artifactId>agent-maven-plugin</artifactId>
+			<artifactId>dependencywatcher-maven-plugin</artifactId>
 			<configuration>
 				<apiKey>Your API key here</apiKey>
 			</configuration>

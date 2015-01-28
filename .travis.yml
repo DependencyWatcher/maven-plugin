@@ -1,11 +1,5 @@
-env:
-  global:
-  - secure: BqHpyxPAMjKWGO7Ur/geMgOE7NYAl8H0kWGhLjTXt5iVYPrBBBI4Wwy8YiBtjORK1wqhmWrGQqWWwm1lkUV8QM0ARolDrrWJEgaHs70yFmUmzjbuVuNiePXhbWrwSRRMMmXmVWMLW6vtRlT/WdzcMsqE/sL/Gpu1HH58sqqTdkA=
-  - secure: LUne/XbZ+HstbYdh9XZbeAr32jlPQ+GaDxkUXP2fLHt8PcnOxfMCesD62eKdZeh8RpH+JusqsVWClXtH9Y+UWcTCtxO03bxLtHeYUSWuATTw43wiHKPRf6GOxuizX4B+vWVP5s4H0yyMlpbKmHslRjEUtLXVuw9U70A66xSg3uI=
 language: java
-before_install:
-- openssl aes-256-cbc -K $encrypted_d043e8034486_key -iv $encrypted_d043e8034486_iv -in .keys/pubring.gpg.enc -out .keys/pubring.gpg -d
-- openssl aes-256-cbc -K $encrypted_d043e8034486_key -iv $encrypted_d043e8034486_iv -in .keys/secring.gpg.enc -out .keys/secring.gpg -d
-after_success:
-- mvn deploy --settings settings.xml -DcreateChecksum=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
-
+install: mvn install -Dgpg.skip=true
+jdk:
+  - oraclejdk7
+  - openjdk7

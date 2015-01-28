@@ -3,6 +3,8 @@ maven-plugin
 
 Maven integration with DependencyWatcher service.
 
+[![Build Status](https://travis-ci.org/DependencyWatcher/maven-plugin.png)](https://travis-ci.org/DependencyWatcher/maven-plugin)
+
 ### Usage ###
 
 ```xml

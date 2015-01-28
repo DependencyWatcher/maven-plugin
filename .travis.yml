@@ -1,7 +1,11 @@
 env:
   global:
-  - secure: eBDU7nJ/GPUpYqUE+3QbH9qNDI+MAcmgC8DC2N8pX/viOKY/P2RqCAfMJOtexZgsB6qVnZ0PwujVoejB5JTm0XRrNqk1Q+6yc2GjBi9R1/uUYtkf8+MZ9ZTB04sSx/HMI4L0OWI1GWs4yZvofKfZf9MX109Uui+2oLF081LoRfU=
-  - secure: X8MiqhZ5rA3MkW4avok/rPQbuBBvKBlEHWqQvfL3rHJkeOvfgIhE1iCbQ2ziiVqebIGxvtkQBIMBAAOeAVon0d8ZScewfzvzCdWw3VisRVbZ1pQy3+vIXZvcz2d8SxDn4mtMeRH033F4t4sj1Rg9ukgQYtl0nC2tGSobmRHyIGY=
+  - secure: BqHpyxPAMjKWGO7Ur/geMgOE7NYAl8H0kWGhLjTXt5iVYPrBBBI4Wwy8YiBtjORK1wqhmWrGQqWWwm1lkUV8QM0ARolDrrWJEgaHs70yFmUmzjbuVuNiePXhbWrwSRRMMmXmVWMLW6vtRlT/WdzcMsqE/sL/Gpu1HH58sqqTdkA=
+  - secure: LUne/XbZ+HstbYdh9XZbeAr32jlPQ+GaDxkUXP2fLHt8PcnOxfMCesD62eKdZeh8RpH+JusqsVWClXtH9Y+UWcTCtxO03bxLtHeYUSWuATTw43wiHKPRf6GOxuizX4B+vWVP5s4H0yyMlpbKmHslRjEUtLXVuw9U70A66xSg3uI=
 language: java
+before_install:
+- openssl aes-256-cbc -K $encrypted_d043e8034486_key -iv $encrypted_d043e8034486_iv -in .keys/pubring.gpg.enc -out .keys/pubring.gpg -d
+- openssl aes-256-cbc -K $encrypted_d043e8034486_key -iv $encrypted_d043e8034486_iv -in .keys/secring.gpg.enc -out .keys/secring.gpg -d
 after_success:
 - mvn deploy --settings settings.xml -DcreateChecksum=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
+

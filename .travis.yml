@@ -1,4 +1,7 @@
+env:
+  global:
+  - secure: eBDU7nJ/GPUpYqUE+3QbH9qNDI+MAcmgC8DC2N8pX/viOKY/P2RqCAfMJOtexZgsB6qVnZ0PwujVoejB5JTm0XRrNqk1Q+6yc2GjBi9R1/uUYtkf8+MZ9ZTB04sSx/HMI4L0OWI1GWs4yZvofKfZf9MX109Uui+2oLF081LoRfU=
+  - secure: X8MiqhZ5rA3MkW4avok/rPQbuBBvKBlEHWqQvfL3rHJkeOvfgIhE1iCbQ2ziiVqebIGxvtkQBIMBAAOeAVon0d8ZScewfzvzCdWw3VisRVbZ1pQy3+vIXZvcz2d8SxDn4mtMeRH033F4t4sj1Rg9ukgQYtl0nC2tGSobmRHyIGY=
 language: java
 after_success:
-  - echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USER}</username><password>\${env.OSSRH_PASS}</password></server></servers></settings>" > ~/settings.xml
-  - mvn deploy -DcreateChecksum=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true --settings ~/settings.xml
+- mvn deploy --settings settings.xml -DcreateChecksum=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true

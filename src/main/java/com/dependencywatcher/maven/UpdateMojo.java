@@ -20,6 +20,9 @@ public class UpdateMojo extends AbstractMojo {
 	@Parameter(required = true, readonly = true)
 	private String apiKey;
 
+	@Parameter(readonly = true)
+	private String baseUri;
+
 	@Override
 	public void execute() throws MojoExecutionException {
 		getLog().info("Gathering information about project dependencies");
@@ -30,7 +33,8 @@ public class UpdateMojo extends AbstractMojo {
 					.toPath());
 			try {
 				DependencyWatcherClient client = new DependencyWatcherClient(
-						apiKey);
+						baseUri != null && baseUri.length() == 0 ? null
+								: baseUri, apiKey);
 				getLog().info("Updating project info on dependecywatcher.com");
 
 				client.uploadRepository(

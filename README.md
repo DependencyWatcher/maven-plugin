@@ -27,3 +27,9 @@ Maven integration with DependencyWatcher service.
 </build>
 ```
 
+#### Optional configuration options ####
+
+Name     | Description                   | Default value
+-------- | ----------------------------- | -------------------------------------
+baseUri  | URL of DependencyWatcher API. | https://dependencywatcher.com/api/v1
+
